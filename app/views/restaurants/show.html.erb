@@ -1,0 +1,28 @@
+<div class="container">
+	<h1><%= @restaurant.name %></h1>
+	<p class="lead text-muted">
+		<%= @restaurant.address %>
+		<span class="badge badge-success">
+			<%= @restaurant.category %>
+		</span>
+	</p>
+<hr>
+ <div class="d-flex justify-content-between  align-items-center">
+ 	<h2>
+ 		Reviews :
+ 	</h2>
+ 	<% link_to 'Add a Review', new_restaurant_path_review_path(@restaurant), class: 'btn btn-primary'%>
+ </div>
+  <ul class="list-group">
+ 	 <% @reviews.each do |review| %>
+ 	  <li>
+ 	  	<% review.content%>
+ 	  	<p class="small text-muted">
+ 	  		<% review.created_at%>
+ 	   </p>
+ 	  </li>
+ 	  <% end %>
+   </div>
+  </ul>
+	</div>
+</div>
